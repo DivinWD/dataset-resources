@@ -11,8 +11,8 @@
 # dataset should have a short DESCRIPTION, ideally with a date.
 [data]
 NAME         = DivinWD
-BASE_URL     = https://zenodo.org/records/18097227
-GET_DATA_CMD = curl -sLo anonymized-triples.nt.gz -C - ${BASE_URL}/files/anonymized-triples.nt.gz
+BASE_URL     = https://zenodo.org/records/18234750
+GET_DATA_CMD = curl -sLo divinwd.nt.gz -C - ${BASE_URL}/files/divinwd.nt.gz
 DESCRIPTION  = Anonymized triples used in the DivinWD project
 
 # The format for INPUT_FILES should be such that `ls ${INPUT_FILES}` lists all
