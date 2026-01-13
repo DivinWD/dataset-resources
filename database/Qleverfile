@@ -23,7 +23,7 @@ DESCRIPTION  = Anonymized triples used in the DivinWD project
 # the same time; increasing this, increases the memory usage but speeds up the
 # loading process.
 [index]
-INPUT_FILES     = ./data/*.nt.gz
+INPUT_FILES     = *.nt.gz
 CAT_INPUT_FILES = zcat ${INPUT_FILES}
 SETTINGS_JSON   = { "num-triples-per-batch": 1000000 }
 STXXL_MEMORY    = 8G
