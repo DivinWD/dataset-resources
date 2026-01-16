@@ -1,5 +1,5 @@
-# DivinWD dataset
-This repository provides resources and instructions for reproducing the research presented in the [DivinWD](https://divinwd.dev) project. It includes environment setup guidelines, configuration files, and code to help researchers replicate our findings.
+# DivinWD dataset resources
+This repository provides resources and instructions for reproducing the research presented in the [DivinWD](https://divinwd.dev) project. It includes environment setup guidelines, configuration files, and code to help researchers replicate our findings. The [dataset file](https://zenodo.org/records/18234750) is available on Zenodo; details about its content are available in this repository under the ```database/``` directory.
 
 The code is released under the MIT license. Data, charts, and other content is released under the [Creative Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/) dedication (public domain).
 
