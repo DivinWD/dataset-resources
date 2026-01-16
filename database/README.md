@@ -76,17 +76,15 @@ Type (used to select best-ranked statements)
 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
 ```
 
-## Notes on anonymization and data enhancement
+## Notes on pseudonymization and data enhancement
 
-The Wikidata subgraph has been modified through anonymization and the addition of new triples representing information derived from external data sources (bibliographic databases, Genderize, and ROR).
+The Wikidata subgraph has been modified through pseudonymization and the addition of new triples representing information derived from external data sources (bibliographic databases, Genderize, and ROR).
 
-### Anonymization
+### Pseudonymization
 
-Wikidata maps entities and statements to RDF terms, each assigned a unique identifier. We replace these identifiers with pseudonyms consisting of a prefix—`X` for entities and `XS` for statements—followed by a randomly chosen number. Statements are also anonymized because their identifiers contain references to subject identifiers. Related URIs are mapped to new ones as follows:
+Wikidata maps entities and statements to RDF terms, each assigned a unique identifier. We replace these identifiers with pseudonyms consisting of a prefix—`X` for entities and `XS` for statements—followed by a randomly chosen number. Statements are also pseudonymized because their identifiers contain references to subject identifiers. Related URIs are mapped to new ones as follows:
 
 ```
-Anonymous entities:
-
 http://www.wikidata.org/entity/
 
 becomes
@@ -97,8 +95,6 @@ https://divinwd.dev/wd/entity/
 For example, the Wikidata term `<http://www.wikidata.org/entity/Q42>` becomes `<http://divinwd.dev/wd/entity/X34>`, where `Q42` maps to the pseudonym `X34`.
 
 ```
-Anonymous statements:
-
 http://www.wikidata.org/entity/statement/
 
 becomes
@@ -108,7 +104,7 @@ https://divinwd.dev/wd/entity/statement/
 
 For example, the Wikidata term `<http://www.wikidata.org/entity/statement/Q42-4cc>` becomes `<http://divinwd.dev/wd/entity/statement/X901>`, where `Q42-4cc` maps to `X901`.
 
-The following entities remain unanonymized:
+The following entities remain unchanged:
 * Article languages (values for `language (P407)`)
 * Values for `sex or gender (P21)`
 * Countries (values for `country of citizenship (P27)`)
@@ -120,7 +116,7 @@ Additional triples have been added to represent information extracted from exter
 
 #### Crossref and OpenAlex
 
-Crossref and OpenAlex provide article language information, encoded using the predicate `https://divinwd.dev/oacr/lang`. The subject is an article and the object is a Wikidata entity representing a language. For example, if `X12` is an (anonymous) article written in English (identified by `Q1860` in Wikidata), the corresponding triple is:
+Crossref and OpenAlex provide article language information, encoded using the predicate `https://divinwd.dev/oacr/lang`. The subject is an article and the object is a Wikidata entity representing a language. For example, if `X12` is an article written in English (identified by `Q1860` in Wikidata), the corresponding triple is:
 
 ```
 <https://divinwd.dev/wd/entity/X12> <https://divinwd.dev/oacr/lang> <http://www.wikidata.org/entity/Q1860> .
@@ -146,7 +142,7 @@ Genderize estimates author gender and nationality. The predicate `https://divinw
 
 #### ROR
 
-ROR organizations are mapped to terms using `https://divinwd.dev/ror/org/` as a prefix followed by their respective ROR IDs. The predicate `https://divinwd.dev/ror/id` links the organization to its corresponding ROR ID, encoded as a string literal. The predicate `https://divinwd.dev/ror/type` is followed by a string representing one of the 9 ROR-defined categories. Finally, `https://divinwd.dev/ror/location` is followed by a country represented as a Wikidata entity.
+ROR organizations are mapped to terms using `https://divinwd.dev/ror/org/` as a prefix followed by their respective ROR IDs. The predicate `https://divinwd.dev/ror/id` links the organization to its corresponding ROR ID, encoded as a string literal. The predicate `https://divinwd.dev/ror/type` is followed by a string representing one of the 9 ROR-defined categories: ```"archive"```, ```"company"```, ```"education"```, ```"facility"```, ```"funder"```, ```"government"```, ```"healthcare"```, ```"nonprofit"```, ```"other"```,. Finally, `https://divinwd.dev/ror/location` is followed by a country represented as a Wikidata entity.
 
 ```
 <https://divinwd.dev/ror/org/abcde> <https://divinwd.dev/ror/id> "abcde" .
