@@ -1,6 +1,8 @@
 # DivinWD dataset
 This repository provides resources and instructions for reproducing the research presented in the [DivinWD](https://divinwd.dev) project. It includes environment setup guidelines, configuration files, and code to help researchers replicate our findings.
 
+The code is released under the MIT license. Data, charts, and other content is released under the [Creative Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/) dedication (public domain).
+
 ## Quickstart with QLever and Docker
 We recommend using [QLever](https://github.com/ad-freiburg/qlever), a fast graph database implementing the RDF and SPARQL standards. The most practical way to use QLever is via its command-line interface, which leverages [Docker](https://www.docker.com), making configuration and management easier.
 
